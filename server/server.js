@@ -1,35 +1,27 @@
 'use strict';
 
-//TODO
-module.exports.run = function() {
-  console.log('started');
-  var WebSocketServer = new require('ws');
+module.exports.init = function() {
 
-  // подключенные клиенты
-  var clients = {};
+  var express = require('express');
+  var mockDB = require('../server/mockDB.json');
+  var app = express();
 
-  var webSocketServer = new WebSocketServer.Server({
-    port: 8081
+  app.all('/*', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    next();
   });
-  webSocketServer.on('connection', function (ws) {
 
-    var id = Math.random();
-    clients[id] = ws;
-    console.log("новое соединение " + id);
+  app.get('/users', function (req, res) {
+    console.log('sended');
+    res.send('users');
+  });
 
-    ws.on('message', function (message) {
-      console.log('получено сообщение ' + message);
+  var server = app.listen(3002, function () {
 
-      for (var key in clients) {
-        clients[key].send(message);
-      }
-    });
+    var host = server.address().address;
+    var port = server.address().port;
 
-    ws.on('close', function () {
-      console.log('соединение закрыто ' + id);
-      delete clients[id];
-    });
+    console.log('Express started at http://%s:%s', host, port);
 
   });
 };
-

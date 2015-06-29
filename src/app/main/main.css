@@ -1,0 +1,20 @@
+.main-container {
+  margin-left: 300px;
+  padding-left: 20px;
+  margin-top: 50px;
+}
+.main-header {
+  position: fixed;
+}
+.main-footer {
+  height: 100px;
+  position: fixed;
+  bottom: 0;
+  display: inline-block;
+}
+.main-footer > .form-group {
+  float: left;
+}
+.main-footer > .btn {
+  float: left;
+}

@@ -1,6 +1,16 @@
+<div class="main-container">
 
-  <div class="container">
-
-    <button ng-click="sendMessageToChat()">sendMessage</button>
-
+  <div class="main-header">
+    <h2>Тест чат:</h2>
   </div>
+
+  <div class="main-body"></div>
+
+  <div class="main-footer">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Input message here" ng-model="mainCtrl.message">
+    </div>
+    <button class="btn btn-default" ng-click="mainCtrl.sendMessage()">Send</button>
+  </div>
+
+</div>

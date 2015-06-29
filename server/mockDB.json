@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "userId": 1234567890,
+      "login": "1",
+      "password": "1",
+      "name": "Дмитрий",
+      "external": {},
+      "chatIds": []
+    }
+  ]
+}

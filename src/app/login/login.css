@@ -150,4 +150,12 @@
     font-size: 0.7em;
     min-height: 0;
   }
+  .input-group-addon {
+    padding: 0 !important;
+    max-width: 10px;
+  }
+  input.form-control {
+    padding-top: 15px !important;
+    padding-left: 15px !important;
+  }
 }

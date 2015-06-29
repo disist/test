@@ -4,16 +4,14 @@
   angular.module('chat')
     .controller('LoginCtrl', LoginCtrl);
 
-  LoginCtrl.$inject = ['$scope', '$state'];
+  LoginCtrl.$inject = ['LoginService'];
 
-  function LoginCtrl($scope, $state) {
-    $scope.update = function(user) {
-      //TODO
-      //LoginService.login
-      if (user && user.login == 1 && user.password == 1) {
-        $state.go('home.main');
-      }
+  function LoginCtrl(LoginService) {
 
+    var vm = this;
+
+    vm.login = function(user) {
+      LoginService.login(user);
     }
   }
 })();
