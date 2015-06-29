@@ -30,8 +30,8 @@
         "name": "bootstrap"
       },
       "bootstrapComponents": {
-        "key": "ui-bootstrap",
-        "module": "ui.bootstrap"
+        "key": "none",
+        "module": null
       },
       "cssPreprocessor": {
         "key": "none",

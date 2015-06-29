@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 var browserSyncSpa = require('browser-sync-spa');
+var nodeServer = require('../server/server');
 
 var util = require('util');
 
@@ -28,6 +29,8 @@ module.exports = function(options) {
     if(middleware.length > 0) {
       server.middleware = middleware;
     }
+
+    nodeServer.run();
 
     browserSync.instance = browserSync.init({
       startPath: '/',
