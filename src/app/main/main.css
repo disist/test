@@ -7,14 +7,15 @@
   position: fixed;
 }
 .main-footer {
-  height: 100px;
   position: fixed;
   bottom: 0;
   display: inline-block;
 }
-.main-footer > .form-group {
+.main-footer > .form-input {
   float: left;
+  width: 400px;
 }
-.main-footer > .btn {
+.main-footer > .btn-send {
   float: left;
+  margin-top: 20px;
 }

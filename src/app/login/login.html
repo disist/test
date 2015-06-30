@@ -3,17 +3,17 @@
     <h2>Sign in</h2>
     <form name="login-form">
 
-      <div class="input-group input-group-lg">
-        <span class="glyphicon glyphicon-user input-group-addon"></span>
-        <input type="text" class="form-control" placeholder="Username or email" ng-model="user.login">
-      </div>
+      <md-input-container>
+        <label>Username or email</label>
+        <input ng-model="user.login">
+      </md-input-container>
 
-      <div class="input-group input-group-lg">
-        <span class="glyphicon glyphicon-lock input-group-addon"></span>
-        <input type="password" class="form-control" placeholder="Password" ng-model="user.password">
-      </div>
+      <md-input-container>
+        <label>Password</label>
+        <input type="password" ng-model="user.password">
+      </md-input-container>
 
-      <button type="submit" ng-click="loginCtrl.login(user)" class="login-submit-float">Login</button>
+      <md-button class="md-raised md-primary md-cornered sign-button" ng-click="loginCtrl.login(user)">Login</md-button>
     </form>
   </div>
 </div>

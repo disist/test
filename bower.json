@@ -1,11 +1,10 @@
 {
-  "name": "chat",
+  "name": "3AngularMaterial",
   "version": "0.0.0",
   "dependencies": {
-    "angular-sanitize": "~1.3.4",
     "jquery": "~2.1.1",
     "angular-ui-router": "~0.2.13",
-    "bootstrap": "3.3.4",
+    "angular-material": "~0.8.3",
     "angular": "~1.3.4"
   },
   "devDependencies": {

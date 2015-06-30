@@ -1,16 +1,23 @@
 <div class="main-container">
 
   <div class="main-header">
+    <md-whiteframe class="md-whiteframe-z2">
+      .md-whiteframe-z1
+    </md-whiteframe>
+
     <h2>Тест чат:</h2>
   </div>
 
   <div class="main-body"></div>
 
   <div class="main-footer">
-    <div class="form-group">
-      <input type="text" class="form-control" placeholder="Input message here" ng-model="mainCtrl.message">
-    </div>
-    <button class="btn btn-default" ng-click="mainCtrl.sendMessage()">Send</button>
+
+      <md-input-container class="form-input">
+        <label>Input message here</label>
+        <input ng-model="mainCtrl.message">
+      </md-input-container>
+      <md-button class="md-raised md-cornered btn-send" ng-click="mainCtrl.sendMessage()">Send</md-button>
+
   </div>
 
 </div>

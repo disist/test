@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  angular.module('chat', ['ui.router'])
+  angular.module('chat', ['ui.router', 'ngMaterial'])
     .config(function ($stateProvider, $urlRouterProvider) {
 
       $urlRouterProvider.rule(function($injector, $location) {

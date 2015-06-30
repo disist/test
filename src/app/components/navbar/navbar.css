@@ -54,3 +54,13 @@
   color: #fff;
   height: 25px;
 }
+
+.group-chats {
+  padding-left: 0;
+}
+.item-chat {
+  width: 100%;
+  text-align: left;
+  padding-left: 15px;
+  color: #ffffff;
+}
