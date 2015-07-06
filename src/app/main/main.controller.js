@@ -17,7 +17,7 @@
     vm.sendMessage = function () {
       $http.get('/users')
         .success(function () {
-          vm.message = 'succes';
+          vm.message = 'success';
         })
         .error(function () {
           vm.message = 'fail';
