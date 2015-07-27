@@ -1,19 +1,23 @@
 <div class="login">
   <div class="heading">
     <h2>Sign in</h2>
-    <form name="login-form">
+    <form name="login_form">
 
       <md-input-container>
         <label>Username or email</label>
-        <input ng-model="user.login">
+        <input ng-model="user.login" required>
       </md-input-container>
 
       <md-input-container>
         <label>Password</label>
-        <input type="password" ng-model="user.password">
+        <input type="password" ng-model="user.password" required>
       </md-input-container>
 
-      <md-button class="md-raised md-primary md-cornered sign-button" ng-click="loginCtrl.login(user)">Login</md-button>
+      <label>{{login_form.pass.$valid}}</label>
+
+      <md-button
+        class="md-raised md-primary md-cornered sign-button"
+        ng-click="loginCtrl.login(user)">Login</md-button>
     </form>
   </div>
 </div>

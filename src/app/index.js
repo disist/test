@@ -5,8 +5,8 @@
     .config(function ($stateProvider, $urlRouterProvider) {
 
       $urlRouterProvider.rule(function($injector, $location) {
-        var loginService = $injector.get('LoginService');
-        if (!loginService.checkLogged() && $location.$$path !== '/login') {
+        var identityService = $injector.get('IdentityService');
+        if (!identityService.checkLogged() && $location.$$path !== '/login') {
           return '/login';
         }
       });
@@ -32,7 +32,8 @@
             },
             'navbar': {
               templateUrl: 'app/components/navbar/navbar.html',
-              controller: 'NavbarCtrl'
+              controller: 'NavbarCtrl',
+              controllerAs: 'navBarCtrl'
             }
           }
         });
