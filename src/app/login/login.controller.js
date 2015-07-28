@@ -4,14 +4,19 @@
   angular.module('chat')
     .controller('LoginCtrl', LoginCtrl);
 
-  LoginCtrl.$inject = ['IdentityService'];
-
+  /*@ngInject*/
   function LoginCtrl(IdentityService) {
 
     var vm = this;
 
-    vm.login = function(user) {
+    angular.extend(vm, {
+      login: login
+    });
+
+
+    function login(user) {
       IdentityService.login(user);
     }
+
   }
 })();

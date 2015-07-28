@@ -4,7 +4,8 @@
   angular.module('chat')
     .factory('IdentityService', IdentityService);
 
-  function IdentityService($http, $state) {
+  /*@ngInject*/
+  function IdentityService($http, $state, DialogService) {
 
     var loggedUser;
 
@@ -32,7 +33,7 @@
           loggedUser = response;
           $state.go('home.main');
         }).error(function (reason) {
-          console.log(reason);
+          DialogService.showToast(reason);
         });
     }
   }
