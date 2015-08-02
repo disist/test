@@ -32,15 +32,14 @@ module.exports.init = function () {
           chatIds: userFromServer[0].chatIds,
           token: token
         };
-        res.send(userResponse);
-        return;
+        return res.send(userResponse);
       }
     }
     res.sendStatus(401);
   });
 
   app.get('/users', function (req, res) {
-    console.log('sended');
+    console.log('отправлено');
     res.send('users');
   });
 
@@ -48,7 +47,6 @@ module.exports.init = function () {
 
     var host = server.address().address;
     var port = server.address().port;
-
     console.log('Express started at http://%s:%s', host, port);
 
   });

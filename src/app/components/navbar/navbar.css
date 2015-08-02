@@ -51,7 +51,8 @@
 /*Groups*/
 .group {
   text-align: center;
-  color: #fff;
+  color: orange;
+  text-transform: uppercase;
   height: 25px;
 }
 
