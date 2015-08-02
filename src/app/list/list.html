@@ -1,0 +1,13 @@
+<div class="main-container">
+    <md-list>
+      <md-list-item class="md-3-line" ng-repeat="item in listCtrl.listChats">
+        <md-button
+          ui-sref="main.chat({chatId: item.chatId})"
+          class="md-list-item-text chat-item">
+          <h3>{{item.name}}</h3>
+          <p>{{item.description}}</p>
+        </md-button>
+        <md-divider></md-divider>
+      </md-list-item>
+    </md-list>
+</div>

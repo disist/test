@@ -5,8 +5,78 @@
       "login": "1",
       "password": "1",
       "name": "Дмитрий",
-      "external": {},
-      "chatIds": []
+      "external": {}
+    },
+    {
+      "userId": 1234567891,
+      "login": "2",
+      "password": "2",
+      "name": "Анастасия",
+      "external": {}
     }
-  ]
+  ],
+  "chats": [
+    {
+      "chatId": 100,
+      "name": "Chat one test",
+      "description": "description chat",
+      "public": false,
+      "userId": 1234567890,
+      "listeners": []
+    },
+    {
+      "chatId": 101,
+      "name": "Chat two",
+      "description": "description chat",
+      "public": false,
+      "userId": 1234567890,
+      "listeners": []
+    },
+    {
+      "chatId": 102,
+      "name": "Chat three",
+      "description": "description chat",
+      "public": false,
+      "userId": 1234567890,
+      "listeners": []
+    },
+    {
+      "chatId": 103,
+      "name": "Chat one for two user",
+      "description": "description chat",
+      "public": false,
+      "userId": 1234567891,
+      "listeners": []
+    },
+    {
+      "chatId": 104,
+      "name": "Chat two for two user",
+      "description": "description chat",
+      "public": false,
+      "userId": 1234567891,
+      "listeners": []
+    }
+  ],
+  "messages": {
+    "100": [
+      {
+        "userId": 1234567891,
+        "userName": "Анастасия",
+        "message": "test one message",
+        "time": 1438545184253
+      },
+      {
+        "userId": 1234567891,
+        "userName": "Анастасия",
+        "message": "test two message",
+        "time": 1438545184253
+      },
+      {
+        "userId": 1234567890,
+        "userName": "Дмитрий",
+        "message": "test tree message",
+        "time": 1438545184253
+      }
+    ]
+  }
 }

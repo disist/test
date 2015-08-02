@@ -4,24 +4,36 @@
   angular.module('chat')
     .controller('MainCtrl', MainCtrl);
 
-  MainCtrl.$inject = ['$http'];
+  /*@ngInject*/
+  function MainCtrl($stateParams, ChatService) {
 
-  function MainCtrl($http) {
-    var socket = new WebSocket('ws://localhost:3003');
+    var socket;
 
     var vm = this;
 
-    /*vm.sendMessage = function () {
-     socket.send(this.message);
-     };*/
-    vm.sendMessage = function () {
-      $http.get('/users')
-        .success(function () {
-          vm.message = 'success';
-        })
-        .error(function () {
-          vm.message = 'fail';
+    angular.extend(vm, {
+      messages: [],
+      message: '',
+      sendMessage: sendMessage
+    });
+
+    activate();
+
+    function activate() {
+      socket = new WebSocket('ws://localhost:3003');
+
+      ChatService.getMessages($stateParams.chatId)
+        .then(function (messages) {
+          vm.messages = messages;
         });
-    };
+    }
+
+    function sendMessage() {
+      //todo find better solution
+      var newMessage = ChatService.sendMessage(socket, $stateParams.chatId, vm.message);
+      vm.messages.push(newMessage[$stateParams.chatId]);
+    }
+
+
   }
 })();

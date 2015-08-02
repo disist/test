@@ -38,9 +38,18 @@ module.exports.init = function () {
     res.sendStatus(401);
   });
 
-  app.get('/users', function (req, res) {
-    console.log('отправлено');
-    res.send('users');
+  app.get('/chats/:userId', function (req, res) {
+    var userId = req.params.userId;
+    var chats = mockDB.chats.filter(function(item) {
+      return item.userId == userId;
+    });
+    res.send(chats);
+  });
+
+  app.get('/messages/:chatId', function(req, res) {
+    var chatId = req.params.chatId;
+    var messages = mockDB.messages[chatId];
+    res.send(messages);
   });
 
   var server = app.listen(3002, function () {

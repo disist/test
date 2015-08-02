@@ -17,6 +17,7 @@ module.exports.init = function() {
     console.log("новое соединение " + id);
 
     ws.on('message', function (message) {
+      console.log(message);
       console.log('получено сообщение ' + message);
 
       for (var key in clients) {

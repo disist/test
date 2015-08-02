@@ -1,10 +1,10 @@
-(function() {
+(function () {
   'use strict';
 
   angular.module('chat', ['ui.router', 'ngMaterial'])
     .config(function ($stateProvider, $urlRouterProvider) {
 
-      $urlRouterProvider.rule(function($injector, $location) {
+      $urlRouterProvider.rule(function ($injector, $location) {
         var identityService = $injector.get('IdentityService');
         if (!identityService.checkLogged() && $location.$$path !== '/login') {
           return '/login';
@@ -18,26 +18,25 @@
           controller: 'LoginCtrl',
           controllerAs: 'loginCtrl'
         })
-        .state('home', {
+        .state('main', {
           abstract: true,
-          template: '<div ui-view="navbar"></div><div ui-view="main"></div>'
+          templateUrl: 'app/navbar/navbar.html',
+          controller: 'NavbarCtrl',
+          controllerAs: 'navBarCtrl'
         })
-        .state('home.main', {
-          url: '/main:chatName',
-          views: {
-            'main': {
-              templateUrl: 'app/main/main.html',
-              controller: 'MainCtrl',
-              controllerAs: 'mainCtrl'
-            },
-            'navbar': {
-              templateUrl: 'app/components/navbar/navbar.html',
-              controller: 'NavbarCtrl',
-              controllerAs: 'navBarCtrl'
-            }
-          }
+        .state('main.list', {
+          url: '/list',
+          templateUrl: 'app/list/list.html',
+          controller: 'ListController',
+          controllerAs: 'listCtrl'
+        })
+        .state('main.chat', {
+          url: '/chat:chatId',
+          templateUrl: 'app/main/main.html',
+          controller: 'MainCtrl',
+          controllerAs: 'mainCtrl'
         });
 
-      $urlRouterProvider.otherwise('/main');
+      $urlRouterProvider.otherwise('/list');
     });
 })();

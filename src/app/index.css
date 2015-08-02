@@ -1,14 +1,5 @@
-.browsehappy {
-  margin: 0.2em 0;
-  background: #ccc;
-  color: #000;
-  padding: 0.2em 0;
-}
-
-.thumbnail {
-  height: 200px;
-}
-
-.thumbnail img.pull-right {
-  width: 50px;
+.main-container {
+  margin-left: 300px;
+  padding-left: 20px;
+  margin-top: 50px;
 }

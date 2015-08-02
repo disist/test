@@ -1,22 +1,26 @@
 <div class="main-container">
 
   <div class="main-header">
-    <md-whiteframe class="md-whiteframe-z2">
-      .md-whiteframe-z1
-    </md-whiteframe>
-
     <h2>Тест чат:</h2>
   </div>
 
-  <div class="main-body"></div>
+  <div class="main-body" layout="column" layout-fill style="padding-bottom: 32px;">
+    <div ng-repeat="message in mainCtrl.messages">
+      <md-whiteframe class="md-whiteframe-z1 message-item" layout>
+        <span class="message-item-user">{{message.userName}}</span>
+        <div class="message-item-body">{{message.message}}</div>
+        <span class="message-item-time">{{message.time | date: 'shortTime'}}</span>
+      </md-whiteframe>
+    </div>
+  </div>
 
   <div class="main-footer">
 
-      <md-input-container class="form-input">
-        <label>Input message here</label>
-        <input ng-model="mainCtrl.message">
-      </md-input-container>
-      <md-button class="md-raised md-cornered btn-send" ng-click="mainCtrl.sendMessage()">Send</md-button>
+    <md-input-container class="form-input">
+      <label>Input message here</label>
+      <input ng-model="mainCtrl.message">
+    </md-input-container>
+    <md-button class="md-raised md-cornered btn-send" ng-click="mainCtrl.sendMessage()">Send</md-button>
 
   </div>
 

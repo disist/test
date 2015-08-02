@@ -5,7 +5,7 @@
     .factory('IdentityService', IdentityService);
 
   /*@ngInject*/
-  function IdentityService($http, $state, DialogService) {
+  function IdentityService($http, $state, DialogService, ChatConstants) {
 
     var loggedUser;
 
@@ -16,6 +16,9 @@
     };
 
     function getLoggedUser() {
+      if (!loggedUser) {
+        loggedUser = angular.fromJson(localStorage.getItem(ChatConstants.LS_keys.User));
+      }
       return loggedUser;
     }
 
@@ -31,7 +34,8 @@
       $http.post('/auth', {user: user})
         .success(function (response) {
           loggedUser = response;
-          $state.go('home.main');
+          localStorage.setItem(ChatConstants.LS_keys.User, angular.toJson(response));
+          $state.go('main.list');
         }).error(function (reason) {
           DialogService.showToast(reason);
         });

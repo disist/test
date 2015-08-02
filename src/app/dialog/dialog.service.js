@@ -5,10 +5,11 @@
     .factory('DialogService', DialogService);
 
   /*@ngInject*/
-  function DialogService($mdToast) {
+  function DialogService($mdToast, ChatConstants) {
 
     return {
-      showToast: showToast
+      showToast: showToast,
+      showServerError: showServerError
     };
 
     function showToast(message) {
@@ -18,6 +19,10 @@
           .position('top')
           .hideDelay(3000)
       );
+    }
+
+    function showServerError() {
+      showToast(ChatConstants.Response.Error);
     }
   }
 })();

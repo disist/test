@@ -8,7 +8,7 @@ module.exports = function (options) {
     nodemon({
       script: options.serverSrc + '/init.js',
       ext: 'js',
-      watch: [options.serverSrc + '/**/*.js'],
+      watch: [options.serverSrc + '/**/*'],
       env: {
         'NODE_ENV': 'development'
       }

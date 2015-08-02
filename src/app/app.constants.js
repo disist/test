@@ -3,9 +3,12 @@
 
   angular.module('chat')
     .constant('ChatConstants', {
-      Login: {
-        USER_LOGIN: 'User_login'
+      LS_keys: {
+        User: 'USER'
       },
-      BackEndUrl: 'http://localhost:3002'
+      BackEndUrl: 'http://localhost:3002',
+      Response: {
+        Error: 'Server error'
+      }
     });
 })();
